@@ -1,0 +1,52 @@
+<!-- Hero Section -->
+<div class="bg-light py-5 mb-4 rounded">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="display-4 fw-bold">{{page-title}}</h1>
+                <p class="lead text-muted">{{page-description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Form Section -->
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="bi bi-credit-card-2-front"></i>{{#if editMode}} Editar Género: {{genre.nombre}}{{else}} Nuevo Género{{/if}}</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/generos/{{#if editMode}}edit{{else}}nuevo{{/if}}">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre del Género:</label>
+                        <input type="text" value="{{#if editMode}}{{genre.nombre}}{{/if}}" class="form-control" id="name" name="name" required />
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Descripción:</label>
+                        <textarea 
+                            class="form-control" 
+                            id="description" 
+                            name="description" 
+                            rows="4"
+                            required="required"
+                        >{{#if editMode}} {{genre.descripcion}}{{else}}{{/if}}</textarea>
+                    </div>
+                    {{#if editMode}}
+                      <input type="hidden" name="genreId" value="{{genre.id}}" />
+                    {{/if}}
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="bi bi-save"></i> Guardar Género
+                        </button>
+                        <a href="/generos" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left"></i> Volver a la lista
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "nombre": "Acción",
+    "descripcion": " Películas de acción "
+  },
+  {
+    "id": 2,
+    "nombre": "Comedia",
+    "descripcion": "Películas para reír y disfrutar"
+  },
+  {
+    "id": 3,
+    "nombre": "Drama",
+    "descripcion": "Películas que abordan temas emocionales y serios"
+  },
+  {
+    "id": 4,
+    "nombre": "Ciencia Ficción",
+    "descripcion": "Películas que exploran conceptos futuristas y tecnológicos"
+  },
+  {
+    "id": "5",
+    "nombre": "Terror",
+    "descripcion": " Películas que buscan provocar miedo "
+  },
+  {
+    "id": 6,
+    "nombre": "Romance",
+    "descripcion": "Películas que exploran el amor y las relaciones"
+  },
+  {
+    "id": 7,
+    "nombre": "Thriller",
+    "descripcion": "Películas que mantienen al espectador en tensión y suspenso"
+  },
+  {
+    "id": 8,
+    "nombre": "Aventura",
+    "descripcion": "Películas que siguen las emocionantes travesías de los personajes"
+  }
+]
