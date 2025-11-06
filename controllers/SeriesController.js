@@ -160,7 +160,7 @@ export function PostEdit(req, res) {
 }
 
 export function Delete(req, res) {
-    const id = req.body.serieId;
+    const id = req.body.SerieId;
 
     Serie.Delete(id, (err) => {
         if (err) {

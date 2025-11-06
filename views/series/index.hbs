@@ -55,7 +55,7 @@
                     </a>
                     <form method="post" action="/series/delete" class="flex-fill">
                         <input type="hidden" value="{{this.id}}" name="SerieId" />
-                        <button type="submit" class="btn btn-sm btn-outline-danger w-100 delete-genre delete-genre-btn">
+                        <button type="submit" class="btn btn-sm btn-outline-danger w-100 delete-serie delete-serie-btn">
                             <i class="bi bi-trash"></i> Borrar </button>
                     </form>
                 </div>
@@ -75,8 +75,5 @@
 </div>
 
 {{#section 'scripts'}}
-<script src="/assets/site/genre/index.js"></script>
-{{/section}}
-{{#section 'styles'}}
-<link rel="stylesheet" href="/assets/site/genre/main.css">
+<script src="/assets/site/indexSerie.js"></script>
 {{/section}}

@@ -29,7 +29,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="vid" class="form-label">Trailer (URL de YouTube - cualquier formato):</label>
-                        <input type="text" value="{{#if editMode}}{{serie.videoUrl}}{{/if}}" class="form-control"
+                        <input type="text" value="{{#if editMode}}{{serie.videoUrl}}{{/if}}" class="form-control" required
                             id="vid" name="vid" placeholder="https://www.youtube.com/watch?v=VIDEO_ID o cualquier URL de YouTube" />
                         <small class="form-text text-muted">
                             Acepta: youtube.com/watch?v=ID, youtu.be/ID, youtube.com/embed/ID
