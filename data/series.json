@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": 1,
+    "nombre": "Breaking Bad",
+    "imagen": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
+    "videoUrl": "https://www.youtube.com/embed/HhesaQXLuRY",
+    "descripcion": "Un profesor de química se convierte en fabricante de metanfetaminas",
+    "generoId": 7
+  },
+  {
+    "id": "2",
+    "nombre": "Friends",
+    "descripcion": "   Seis amigos viviendo en Nueva York",
+    "generoId": "2",
+    "imagen": "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
+    "videoUrl": "https://www.youtube.com/embed/SuVa_hWPIYA"
+  },
+  {
+    "id": 3,
+    "nombre": "Stranger Things",
+    "imagen": "https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    "videoUrl": "https://www.youtube.com/embed/b9EkMc79ZSU",
+    "descripcion": "Eventos sobrenaturales en un pequeño pueblo",
+    "generoId": 4
+  },
+  {
+    "id": "4",
+    "nombre": "The Office",
+    "descripcion": " Vida diaria en una oficina de ventas de papel",
+    "generoId": "2",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMfvRTv5PsJO-yD7MIUY7mZqH7P7urQBZY6URVKVU4AFDxsFKDZ3okW8svot-oObRhZuiFHkNFqiMrhox6rPNInluuJ9-v4ZwZXVY2M54eLw&s=10",
+    "videoUrl": "https://www.youtube.com/embed/LHOtME2DL4g"
+  },
+  {
+    "id": "5962.711984870916",
+    "nombre": "Black Dynamite",
+    "descripcion": " Un héroe de acción se enfrenta, con el groove de los años 70",
+    "generoId": "1",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRkJ0vDnM3xtw3zMYqcwziyXdJAqXDwrIUH5bpuUMU-7OSKSe2YCRB1fnjvC60WBsOZBWaOwjtARSGmVIBbVEASRY--ODpRZPojROUzUpw&s=10",
+    "videoUrl": "https://youtu.be/96Y24a0cyCE?si=IFsK0x7wS4RBIXib"
+  }
+]

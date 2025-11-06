@@ -1,0 +1,113 @@
+<!-- Hero Section -->
+<div class="bg-light py-5 mb-4 rounded">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="display-4 fw-bold">{{serie.nombre}}</h1>
+                <p class="lead text-muted">Detalles de la serie</p>
+                <span class="badge bg-primary fs-5">{{genero.nombre}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Content Section -->
+<div class="container mt-4">
+    <div class="row">
+        <!-- Image Column -->
+        <div class="col-md-5 mb-4">
+            <div class="card">
+                <img src="{{serie.imagen}}" class="card-img-top" alt="{{serie.nombre}}" style="height: 400px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">{{serie.nombre}}</h5>
+                    <p class="text-muted"><i class="bi bi-tag-fill"></i> Género: {{genero.nombre}}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Details Column -->
+        <div class="col-md-7">
+            <div class="card mb-3">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-info-circle"></i> Descripción</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{serie.descripcion}}</p>
+                </div>
+            </div>
+
+            <!-- YouTube Video -->
+            {{#if serie.videoUrl}}
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0"><i class="bi bi-youtube"></i> Trailer</h5>
+                </div>
+                <div class="card-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe id="youtubePlayer" data-video-url="{{serie.videoUrl}}" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                // Convert any YouTube URL format to embed URL
+                function convertToEmbedUrl(url) {
+                    if (!url) return '';
+                    
+                    // Already an embed URL
+                    if (url.includes('/embed/')) {
+                        return url;
+                    }
+                    
+                    let videoId = null;
+                    
+                    // Extract video ID from different YouTube URL formats
+                    // Format: https://www.youtube.com/watch?v=VIDEO_ID
+                    // Format: https://youtube.com/watch?v=VIDEO_ID
+                    if (url.includes('watch?v=')) {
+                        videoId = url.split('watch?v=')[1].split('&')[0];
+                    }
+                    // Format: https://youtu.be/VIDEO_ID
+                    else if (url.includes('youtu.be/')) {
+                        videoId = url.split('youtu.be/')[1].split('?')[0];
+                    }
+                    // Format: https://www.youtube.com/v/VIDEO_ID
+                    else if (url.includes('/v/')) {
+                        videoId = url.split('/v/')[1].split('?')[0];
+                    }
+                    
+                    // If we found a video ID, return embed URL
+                    if (videoId) {
+                        return `https://www.youtube.com/embed/${videoId}`;
+                    }
+                    
+                    // Return original URL if we couldn't parse it
+                    return url;
+                }
+                
+                // Apply the conversion when page loads
+                document.addEventListener('DOMContentLoaded', function() {
+                    const iframe = document.getElementById('youtubePlayer');
+                    if (iframe) {
+                        const originalUrl = iframe.getAttribute('data-video-url');
+                        const embedUrl = convertToEmbedUrl(originalUrl);
+                        iframe.src = embedUrl;
+                    }
+                });
+            </script>
+            {{/if}}
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="row mt-4">
+        <div class="col text-center">
+            <a href="/" class="btn btn-secondary btn-lg">
+                <i class="bi bi-arrow-left"></i> Volver al inicio
+            </a>
+            <a href="/series" class="btn btn-primary btn-lg">
+                <i class="bi bi-list"></i> Ver todas las series
+            </a>
+        </div>
+    </div>
+</div>

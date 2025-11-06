@@ -1,0 +1,87 @@
+/* ========== Hover Effects ========== */
+.hover-shadow {
+    transition: all 0.3s ease;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.delete-genre:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.img-size {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+/* ========== Dark Mode Styles ========== */
+[data-bs-theme="dark"] {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: #2d2d2d;
+    border-color: #404040;
+    color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .card-header {
+    background-color: #383838 !important;
+    border-bottom-color: #404040;
+}
+
+[data-bs-theme="dark"] .card-footer {
+    background-color: #242424;
+    border-top-color: #404040;
+}
+
+[data-bs-theme="dark"] .navbar {
+    background-color: #0d0d0d !important;
+}
+
+[data-bs-theme="dark"] .bg-light {
+    background-color: #2d2d2d !important;
+    color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .text-muted {
+    color: #b0b0b0 !important;
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+    background-color: #2d2d2d;
+    border-color: #404040;
+    color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+    background-color: #383838;
+    border-color: #0d6efd;
+    color: #e0e0e0;
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}

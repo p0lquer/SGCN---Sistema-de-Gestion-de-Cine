@@ -36,7 +36,6 @@ export function PostNewGenre(req, res) {
     );
     genre.Save((err)=>{
         if (err) {
-            console.error('Error deleting genre:', err);
             return res.status(500).render('error', { 
                 "page-title": 'Error', 
                 error: err.message
@@ -82,7 +81,6 @@ export function PostEdit(req, res) {
     );
     genre.Save((err)=>{
         if (err) {
-            console.error('Error updating genre:', err);
             return res.status(500).render('404',{
                 "page-title": 'Server Error',
                 error: err.message
@@ -99,7 +97,6 @@ export function Delete(req, res) {
 
     Genres.Delete(id, (err) => {
         if (err) {
-            console.error('Error deleting genre:', err);
             return res.status(500).render('error', {
                 "page-title": 'Error',
                 error: err.message

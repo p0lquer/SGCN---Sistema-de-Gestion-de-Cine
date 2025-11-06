@@ -1,0 +1,74 @@
+<!-- Hero Section -->
+<div class="bg-light py-5 mb-4 rounded">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="display-4 fw-bold">{{page-title}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Form Section -->
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="bi bi-credit-card-2-front"></i>{{#if editMode}} Editar Serie: {{serie.nombre}}{{else}} Nueva Serie{{/if}}</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/series/{{#if editMode}}edit{{else}}nuevo{{/if}}">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre de la Serie:</label>
+                        <input type="text" value="{{#if editMode}}{{serie.nombre}}{{/if}}" class="form-control" id="name" name="name" required />
+                    </div>
+                     <div class="mb-3">
+                        <label for="img" class="form-label">Portada (URL de la imagen):</label>
+                        <input type="text" value="{{#if editMode}}{{serie.imagen}}{{/if}}"
+                            class="form-control" id="img" name="img" placeholder="https://ejemplo.com/imagen.jpg" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="vid" class="form-label">Trailer (URL de YouTube - cualquier formato):</label>
+                        <input type="text" value="{{#if editMode}}{{serie.videoUrl}}{{/if}}" class="form-control"
+                            id="vid" name="vid" placeholder="https://www.youtube.com/watch?v=VIDEO_ID o cualquier URL de YouTube" />
+                        <small class="form-text text-muted">
+                            Acepta: youtube.com/watch?v=ID, youtu.be/ID, youtube.com/embed/ID
+                        </small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="genre" class="form-label">Género:</label>
+                        <select class="form-select" id="genre" name="genero" required>
+                            <option value="">Selecciona un Género</option>
+                            {{#each generos}}
+                            <option value="{{this.id}}" {{#if (eq this.id ../serie.generoId)}}selected{{/if}}>
+                                {{this.nombre}}
+                            </option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Descripción:</label>
+                        <textarea 
+                            class="form-control" 
+                            id="description" 
+                            name="description" 
+                            rows="4"
+                            required="required"
+                        >{{#if editMode}} {{serie.descripcion}}{{else}}{{/if}}</textarea>
+                    </div>
+                    {{#if editMode}}
+                      <input type="hidden" name="serieId" value="{{serie.id}}" />
+                    {{/if}}
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="bi bi-save"></i> Guardar Serie
+                        </button>
+                        <a href="/series" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left"></i> Volver a la lista
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

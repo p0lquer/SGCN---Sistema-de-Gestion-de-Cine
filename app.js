@@ -2,9 +2,9 @@ import express from 'express';
 import {engine} from 'express-handlebars';
 import path from 'path';
 import {projectRoot} from './utils/path.js';
-import homeRoutes from './routes/home.js';
+import homeRoutes from './routes/home-router.js';
 import genreRoutes from './routes/genres-router.js';
-import seriesRoutes from './routes/series.js';
+import seriesRoutes from './routes/series-router.js';
 
 
 const app = express();
@@ -13,14 +13,23 @@ app.engine('hbs', engine({
     layoutsDir: "views/layouts",
     defaultLayout: 'layout',
     extname: 'hbs',
+    
     helpers: {
         section: function(name, options){
             if(!this._sections) this._sections = {};
             this._sections[name] = options.fn(this);
             return null;
-        }    
+        },
+        eq: function (a, b) {
+            return a === b;
+        },
+        or: function (a, b) {
+            return a || b;
+        }
     }
 }));
+
+
 app.set('view engine', 'hbs');
 app.set('views', 'views');
 

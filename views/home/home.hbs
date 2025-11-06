@@ -1,8 +1,103 @@
-<div class="container">
+<div class="row">
+    <div class="col text-center">
+        <h1>Bienvenido al Gestor de Cine</h1>
+        <p class="lead">Explora y administra tu colección de series y géneros favoritos.</p>
+    </div>
+</div>
+
+<!-- Filter Section -->
+<div class="container mt-4">
     <div class="row">
-        <div class="col text-center">
-            <h1>Bienvenido al Gestor de Cine</h1>
-            <p class="lead">Explora y administra tu colección de series y géneros favoritos.</p>
+        <!-- Search by Name -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-search"></i> Buscar por Nombre
+                    </h5>
+                    <form action="/" method="GET">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="search" placeholder="Nombre de la serie..."
+                                value="{{search}}">
+                            <button class="btn btn-primary" type="submit">
+                                Buscar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter by Genre -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-funnel"></i> Filtrar por Género
+                    </h5>
+                    <form action="/" method="GET">
+                        <div class="input-group">
+                            <select class="form-select" name="genero">
+                                <option value="">Todos los géneros</option>
+                                {{#each generos}}
+                                <option value="{{this.id}}" {{#if (eq this.id ../generoSeleccionado)}}selected{{/if}}>
+                                    {{this.nombre}}
+                                </option>
+                                {{/each}}
+                            </select>
+                            <button class="btn btn-secondary" type="submit">
+                                Filtrar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Clear Filters Button -->
+    {{#if (or search generoSeleccionado)}}
+    <div class="row mb-3">
+        <div class="col text-center">
+            <a href="/" class="btn btn-outline-danger">
+                <i class="bi bi-x-circle"></i> Limpiar Filtros
+            </a>
+        </div>
+    </div>
+    {{/if}}
+</div>
+
+<!-- Series List -->
+<div class="container mt-4">
+    {{#if series.length}}
+    <div class="row">
+        {{#each series}}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm hover-shadow">
+                <div class="position-relative">
+                    <img src="{{this.imagen}}" class="card-img-top" alt="{{this.nombre}}"
+                        style="height: 350px; object-fit: cover;">
+                    <span class="position-absolute top-0 end-0 m-3 badge bg-primary fs-6 px-3 py-2">
+                        <i class="bi bi-tag-fill"></i> {{this.generoNombre}}
+                    </span>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold">{{this.nombre}}</h5>
+                    <p class="card-text text-muted flex-grow-1">{{this.descripcion}}</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 p-3">
+                    <a href="/series/{{this.id}}/detail" class="btn btn-primary w-100">
+                        <i class="bi bi-play-circle"></i> Ver Detalle
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{else}}
+    <div class="alert alert-warning text-center" role="alert">
+        <i class="bi bi-exclamation-triangle"></i>
+        No se encontraron series{{#if (or search generoSeleccionado)}} con los filtros aplicados{{/if}}.
+    </div>
+    {{/if}}
 </div>
