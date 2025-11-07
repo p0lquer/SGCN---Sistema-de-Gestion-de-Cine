@@ -5,28 +5,23 @@ import Genre from '../models/GenresModel.js';
 function convertToEmbedUrl(url) {
     if (!url || url.trim() === '') return '';
     
-    // Already an embed URL
     if (url.includes('/embed/')) {
         return url;
     }
     
     let videoId = null;
     
-    // Extract video ID from different YouTube URL formats
-    // Format: https://www.youtube.com/watch?v=VIDEO_ID
+  
     if (url.includes('watch?v=')) {
         videoId = url.split('watch?v=')[1].split('&')[0];
     }
-    // Format: https://youtu.be/VIDEO_ID
     else if (url.includes('youtu.be/')) {
         videoId = url.split('youtu.be/')[1].split('?')[0];
     }
-    // Format: https://www.youtube.com/v/VIDEO_ID
     else if (url.includes('/v/')) {
         videoId = url.split('/v/')[1].split('?')[0];
     }
     
-    // If we found a video ID, return embed URL
     if (videoId) {
         return `https://www.youtube.com/embed/${videoId}`;
     }

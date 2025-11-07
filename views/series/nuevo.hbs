@@ -38,9 +38,9 @@
                     <div class="mb-3">
                         <label for="genre" class="form-label">Género:</label>
                         <select class="form-select" id="genre" name="genero" required>
-                            <option value="">Selecciona un Género</option>
+                            <option value="" disabled {{#unless editMode}}selected{{/unless}}>Selecciona un género</option>
                             {{#each generos}}
-                            <option value="{{this.id}}" {{#if (eq this.id ../serie.generoId)}}selected{{/if}}>
+                            <option value="{{this.id}}"  {{#if ../editMode}}{{#if (eq this.id ../serie.generoId)}}selected{{/if}}{{/if}}>
                                 {{this.nombre}}
                             </option>
                             {{/each}}
