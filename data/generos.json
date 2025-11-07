@@ -25,24 +25,9 @@
     "descripcion": " Películas que buscan provocar miedo "
   },
   {
-    "id": 6,
-    "nombre": "Romance",
-    "descripcion": "Películas que exploran el amor y las relaciones"
-  },
-  {
     "id": 7,
     "nombre": "Thriller",
     "descripcion": "Películas que mantienen al espectador en tensión y suspenso"
-  },
-  {
-    "id": 8,
-    "nombre": "Aventura",
-    "descripcion": "Películas que siguen las emocionantes travesías de los personajes"
-  },
-  {
-    "id": 5932.022563659015,
-    "nombre": "Anime",
-    "descripcion": "Animación japonesa"
   },
   {
     "id": "12247.948366122899",
@@ -53,10 +38,5 @@
     "id": 15070.532971678644,
     "nombre": "Misterio",
     "descripcion": "Historias con sucesos sin resolver hasta el final de la historia"
-  },
-  {
-    "id": 21622.39789425484,
-    "nombre": "Fantasía",
-    "descripcion": "Explora  elementos mágicos, sobrenaturales e incluso irreales"
   }
 ]

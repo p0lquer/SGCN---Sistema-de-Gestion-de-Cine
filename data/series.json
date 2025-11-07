@@ -10,8 +10,8 @@
   {
     "id": "2",
     "nombre": "Friends",
-    "descripcion": "   Seis amigos viviendo en Nueva York",
-    "generoId": "2",
+    "descripcion": "Seis amigos viviendo en Nueva York.",
+    "generoId": "1",
     "imagen": "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     "videoUrl": "https://www.youtube.com/embed/SuVa_hWPIYA"
   },
@@ -32,14 +32,6 @@
     "videoUrl": "https://www.youtube.com/embed/LHOtME2DL4g"
   },
   {
-    "id": "6845.510132994743",
-    "nombre": "Dexter",
-    "descripcion": "   El joven Dexter Morgan se convierte en un asesino en serie vengativo.",
-    "generoId": "1",
-    "imagen": "https://resizing.flixster.com/QcwX8vOnuLL4zaXJueeaqyxzSV8=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7892396_b_h9_ab.jpg",
-    "videoUrl": "https://www.youtube.com/embed/2_NCkC2ZFyc"
-  },
-  {
     "id": "16122.277940903126",
     "nombre": "Better Call Saul",
     "descripcion": " El cuestionable abogado Jimmy McGill asume el alias de Saul Goodman, mientras intenta labrarse un nombre propio en Albuquerque.",
@@ -54,21 +46,5 @@
     "generoId": "1",
     "imagen": "https://pics.filmaffinity.com/Black_Dynamite-161178758-large.jpg",
     "videoUrl": "https://www.youtube.com/embed/96Y24a0cyCE"
-  },
-  {
-    "id": "24059.380296248386",
-    "nombre": "Terraformars",
-    "descripcion": "   Adentrate en la expedición de la U-NASA a Marte tras haber perdido la comunicación con la nave Bugs I encargada de revisar la terraformación de Marte llevada a cabo por los humanos 500 años atrás.",
-    "generoId": "12247.948366122899",
-    "imagen": "https://i.ytimg.com/vi/_wTKrPfL2Wc/sddefault.jpg",
-    "videoUrl": "https://www.youtube.com/embed/ggRs39HO8Ok"
-  },
-  {
-    "id": 28683.507880728554,
-    "nombre": "Kingdom",
-    "descripcion": "En la antigua China, dos niños huérfanos sueñan con escapar y demostrar su valía en el campo de batalla.",
-    "generoId": "5932.022563659015",
-    "imagen": "https://m.media-amazon.com/images/S/pv-target-images/8e87e4aff76493a078cc73ffc2b38b2353eca6e6a6fdd39bfc96d0b61124f886.jpg",
-    "videoUrl": "https://www.youtube.com/embed/o_8rPkAVpQI"
   }
 ]

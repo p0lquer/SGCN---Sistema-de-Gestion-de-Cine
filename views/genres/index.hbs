@@ -51,7 +51,7 @@
                     </a>
                     <form method="post" action="/generos/delete" class="flex-fill">
                         <input type="hidden" value="{{this.id}}" name="GenreId" />
-                        <button type="submit" class="btn btn-sm btn-outline-danger w-100 delete-genre delete-serie-btn">
+                        <button type="submit" class="btn btn-sm btn-outline-danger w-100 delete-genre-btn">
                         <i class="bi bi-trash"></i>   Borrar  </button>
                     </form>
                 </div>
@@ -70,9 +70,6 @@
     {{/each}}
 </div>
 
-{{#section 'scripts'}}
-<script src="/assets/site/index.js"></script>
-{{/section}}
 
 
 
